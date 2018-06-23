@@ -1,3 +1,5 @@
 # SalmonyMobile
 
-SalmonyMobile\android\local.properties 內的 C:/Users/QLin/AppData/Local/Android/Sdk  改成自己電腦的sdk位置
+在SalmonyMobile\android下新增local.properties
+裡面放 sdk.dir = C:/Users/Username/AppData/Local/Android/Sdk
+(Username是自己電腦的名稱)
