@@ -32,15 +32,21 @@ export default class BorrowForm extends React.Component{
                     backgroundColor: appColors.mask
                 }
             })}>
+            
             <View style={styles.header}>
             </View>
             <View style={styles.list}>
+            <View style={styles.itemTitle}>
+                <Text style={styles.item}>              借款人</Text>
+                <Text style={styles.item}>金額</Text>
+                <Text style={styles.item}>應還日期        </Text>
+            </View>
                 <BorrowList />
             </View>
             <View style={styles.bar}>
                 <Button transparent style={StyleSheet.flatten(styles.button)} onPress={this.openDrawer}>
                      <Icon name='menu'
-                        style={StyleSheet.flatten(styles.icon)} />
+                        style={StyleSheet.flatten(styles.icon)}/>
                 </Button>
                 </View>
                 <View style={styles.title}>
@@ -95,4 +101,14 @@ const styles = StyleSheet.create({
         fontSize: (Platform.OS === 'ios') ? 17 : 19,
         fontWeight: (Platform.OS ==='ios') ? '600' : undefined
     },
+    item:{
+        color:'black',
+        fontSize: (Platform.OS === 'ios') ? 17 : 19,
+        fontWeight: (Platform.OS ==='ios') ? '600' : undefined,
+        
+    },
+    itemTitle:{
+        flexDirection: 'row',
+        justifyContent: 'space-around'
+    }
 });

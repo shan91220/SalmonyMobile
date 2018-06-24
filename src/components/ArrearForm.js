@@ -35,6 +35,11 @@ export default class ArrearForm extends React.Component{
             <View style={styles.header}>
             </View>
             <View style={styles.list}>
+            <View style={styles.itemTitle}>
+                <Text style={styles.item}>              借款人</Text>
+                <Text style={styles.item}>金額</Text>
+                <Text style={styles.item}>應還日期        </Text>
+            </View>
                 <ArrearList />
             </View>
             <View style={styles.bar}>
@@ -95,4 +100,14 @@ const styles = StyleSheet.create({
         fontSize: (Platform.OS === 'ios') ? 17 : 19,
         fontWeight: (Platform.OS ==='ios') ? '600' : undefined
     },
+    item:{
+        color:'black',
+        fontSize: (Platform.OS === 'ios') ? 17 : 19,
+        fontWeight: (Platform.OS ==='ios') ? '600' : undefined,
+        
+    },
+    itemTitle:{
+        flexDirection: 'row',
+        justifyContent: 'space-around'
+    }
 });
