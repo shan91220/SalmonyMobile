@@ -16,6 +16,8 @@ import {createReduxBoundAddListener, createReactNavigationReduxMiddleware} from 
 import {StackNavigator, NavigationActions, addNavigationHelpers} from 'react-navigation';
 
 import {borrow} from './states/borrow-reducers';
+import {arrear} from './states/arrear-reducers';
+import {history} from './states/history-reducers';
 import Login from './components/Login';
 import Register from './components/Register';
 import BorrowForm from './components/BorrowForm';
@@ -81,7 +83,7 @@ const nav = (state = initialState, action) => {
 
 // Create Redux store
 const store = createStore(combineReducers({
-    nav, borrow,
+    nav, borrow, arrear, history
 }), compose(applyMiddleware(thunkMiddleware, loggerMiddleware)));
 
 export default class App extends React.Component {

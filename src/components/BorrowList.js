@@ -4,6 +4,7 @@ import {
     View,
     ListView, RefreshControl
 } from 'react-native';
+import InfiniteScrollView from 'react-native-infinite-scroll-view';
 
 import {connect} from 'react-redux';
 import {BorrowItem} from './BorrowItem';

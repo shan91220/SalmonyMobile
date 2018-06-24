@@ -20,19 +20,21 @@ export class HistoryItem extends React.Component {
     render() {
         const {record_id,name,amount,expect_date} = this.props;
         return (
-            <ListItem style={StyleSheet.flatten(styles.listItem)}>
-                <View style={styles.record}>
+            <ListItem key={record_id} title={name} style={StyleSheet.flatten(styles.listItem)}>
+                {/* <View style={styles.record}>
                     <View style={styles.img}>
                         <Image source={require('../images/LPICON.png')}/>
-                    </View>
+                    </View> 
                     <View style={styles.info}>
                         <Text style={styles.name}>{name}</Text>
                         <Text style={styles.amount}>{amount}</Text>
                         <Text style={styles.expect_date}>{expect_date}</Text>
                     </View>
-                </View>
+                </View> */}
+                <Text>{name}</Text>
                
             </ListItem>
+            
         );
     }
 

@@ -22,21 +22,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'rgba(0, 0, 0, 0.3)',
-    },
-    image: {
-        width: 262.5,
-        height: 180,
-        left: 92
-    },
-    temp: {
-        fontSize: 48,
-        color: 'white',
-        backgroundColor: 'transparent',
-        top: 76,
-        right: 192,
-        textShadowColor: 'rgba(0, 0, 0, 0.5)',
-        textShadowOffset: {width: 1, height: 1},
-        textShadowRadius: 24
     }
 });
 

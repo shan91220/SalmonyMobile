@@ -9,7 +9,7 @@ export function listHistoryRecords() {
     });
 }
 
-function listHistoryRecords(user_account = '') {
+function _listHistoryRecords(user_account = '') {
     let historyRecords = [
         {   
             record_id : 1,

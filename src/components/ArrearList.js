@@ -11,7 +11,7 @@ import {listArrearRecords} from '../states/arrear-actions';
 
 class ArrearList extends React.Component {
     static propTypes = {
-        arrearRecords: PropTypes.array
+        historyRecords: PropTypes.array
     };
 
     constructor(props) {
@@ -75,4 +75,4 @@ class ArrearList extends React.Component {
 
 export default connect(state =>({
     arrearRecords: state.arrear.arrearRecords
-}))(arrearList);
+}))(ArrearList);

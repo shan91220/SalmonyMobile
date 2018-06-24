@@ -7,7 +7,7 @@ function startListRecords() {
         type: '@ARREAR/START_LIST_RECORDS'
     };
 }
-function endListRecords(borrowRecords){
+function endListRecords(arrearRecords){
     return{
         type:'@ARREAR/END_LIST_RECORDS',
         arrearRecords

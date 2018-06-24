@@ -1,13 +1,13 @@
 import {
     listHistoryRecords as listHistoryRecordsFromApi
-} from '../api/borrow.js'
+} from '../api/history.js'
 
 function startListRecords() {
     return {
         type: '@HISTORY/START_LIST_RECORDS'
     };
 }
-function endListRecords(borrowRecords){
+function endListRecords(historyRecords){
     return{
         type:'@HISTORY/END_LIST_RECORDS',
         historyRecords
