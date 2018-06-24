@@ -56,7 +56,6 @@ class BorrowList extends React.Component {
         //         </ListGroupItem>
         //     ));
         // }
-
         return (
             // <div className='record-list'>
             //     <ListGroup>

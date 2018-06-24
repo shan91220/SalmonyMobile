@@ -22,6 +22,66 @@ function _listBorrowRecords(user_account = '') {
             name : 'Shan',
             amount : 10,
             expect_date : '2018-04-23'
+        },
+        {   
+            record_id : 2,
+            name : 'Shan',
+            amount : 10,
+            expect_date : '2018-04-23'
+        },
+        {   
+            record_id : 2,
+            name : 'Shan',
+            amount : 10,
+            expect_date : '2018-04-23'
+        },
+        {   
+            record_id : 2,
+            name : 'Shan',
+            amount : 10,
+            expect_date : '2018-04-23'
+        },
+        {   
+            record_id : 2,
+            name : 'Shan',
+            amount : 10,
+            expect_date : '2018-04-23'
+        },
+        {   
+            record_id : 2,
+            name : 'Shan',
+            amount : 10,
+            expect_date : '2018-04-23'
+        },
+        {   
+            record_id : 2,
+            name : 'Shan',
+            amount : 10,
+            expect_date : '2018-04-23'
+        },
+        {   
+            record_id : 2,
+            name : 'Shan',
+            amount : 10,
+            expect_date : '2018-04-23'
+        },
+        {   
+            record_id : 2,
+            name : 'Shan',
+            amount : 10,
+            expect_date : '2018-04-23'
+        },
+        {   
+            record_id : 2,
+            name : 'Shan',
+            amount : 10,
+            expect_date : '2018-04-23'
+        },
+        {   
+            record_id : 2,
+            name : 'Shan',
+            amount : 10,
+            expect_date : '2018-04-23'
         }
     ];
     return borrowRecords;
