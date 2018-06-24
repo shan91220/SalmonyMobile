@@ -30,10 +30,7 @@ class HistoryList extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         const {historyRecords} = this.props;
-        // console.log('borrowRecords are' + borrowRecords);
         if (historyRecords !== nextProps.historyRecords) {
-            // console.log('this:'+ borrowRecords);
-            // console.log('next:'+ nextProps.borrowRecords);
             this.setState({
                 dataSource: this.state.dataSource.cloneWithRows(nextProps.historyRecords)
             });
@@ -41,28 +38,8 @@ class HistoryList extends React.Component {
     }
 
     render() {
-        // const {borrowRecords} = this.props;
-
-        // let children = (
-        //     <ListGroupItem className='empty d-flex justify-content-center align-items-center'>
-        //         <div className='empty-text'>No record here.</div>
-        //     </ListGroupItem>
-        // );
-        
-        // if (borrowRecords.length) {
-        //     children = borrowRecords.map(p => (
-        //         <ListGroupItem key={p.id} action>
-        //             <BorrowRecordItem {...p}/>
-        //         </ListGroupItem>
-        //     ));
-        // }
 
         return (
-            // <div className='record-list'>
-            //     <ListGroup>
-            //         {children}
-            //     </ListGroup>
-            // </div>
             <ListView
                 dataSource={this.state.dataSource}
                 renderRow={(p) => {
