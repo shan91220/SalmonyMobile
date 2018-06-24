@@ -14,15 +14,15 @@ import {toast} from './states/toast';
 import {post, postForm, postItem} from './states/post-reducers';
 import {createReduxBoundAddListener, createReactNavigationReduxMiddleware} from 'react-navigation-redux-helpers';
 import {StackNavigator, NavigationActions, addNavigationHelpers} from 'react-navigation';
-import TodayScreen from './components/TodayScreen';
-import PostFormScreen from './components/PostFormScreen';
-import ForecastScreen from './components/ForecastScreen';
+
+import {borrow} from './states/borrow-reducers';
 import Login from './components/Login';
 import Register from './components/Register';
 import BorrowForm from './components/BorrowForm';
 import ArrearForm from './components/ArrearForm';
 import HistoryForm from './components/HistoryForm';
 import NewlendForm from './components/NewlendForm';
+
 const AppNavigator = StackNavigator({
     Login: {screen: Login},
     Register: {screen: Register},
@@ -73,7 +73,7 @@ const AppWithNavState = connect(state => ({
 }))(AppWithStyleAndNavigator);
 
 // Nav reducer
-const initialState = AppNavigator.router.getStateForAction(NavigationActions.navigate({routeName: 'NewlendForm'}));
+const initialState = AppNavigator.router.getStateForAction(NavigationActions.navigate({routeName: 'BorrowForm'}));
 const nav = (state = initialState, action) => {
     const nextState = AppNavigator.router.getStateForAction(action, state);
     return nextState || state;
@@ -81,8 +81,7 @@ const nav = (state = initialState, action) => {
 
 // Create Redux store
 const store = createStore(combineReducers({
-    nav, search, toast,
-    post, postForm, postItem
+    nav, borrow,
 }), compose(applyMiddleware(thunkMiddleware, loggerMiddleware)));
 
 export default class App extends React.Component {
