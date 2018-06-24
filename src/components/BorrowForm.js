@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Text, StyleSheet, View, Image} from 'react-native';
-import { Button,Container, Header, Content, Form, Item, Input, Label, Fab} from 'native-base';
-import Parallax from './Parallax';
+import {StyleSheet, Text, View, Platform} from 'react-native';
+import {Button, Icon, Drawer} from 'native-base';
+import DrawerSideBar from './DrawerSideBar';
 import BorrowList from './BorrowList';
-import HeaderDisplay from './HeaderDisplay';
 export default class BorrowForm extends React.Component{
     static propTypes = {
         navigation: PropTypes.object.isRequired
@@ -15,51 +14,85 @@ export default class BorrowForm extends React.Component{
             fabActive: false
         };
 
-        this.handleFabClose = this.handleFabClose.bind(this);
-        
+        this.openDrawer = this.openDrawer.bind(this);
+        this.closeDrawer = this.closeDrawer.bind(this);
     }
     render(){
         const {navigate} = this.props.navigation;
 
         return (
           
-
-            <Parallax
-            navigate={navigate}
-            title='BorrowForm'
-            titleLeft={0}
-            titleTop={0}
-            renderHeaderContent={props => <HeaderDisplay {...props} />}
-            renderScroller={props => <BorrowList scrollProps={props} />}>
-            
-            </Parallax>
+            <Drawer
+            ref={(el) => this.drawer = el}
+            content={<DrawerSideBar navigate={navigate} />}
+            onClose={this.closeDrawer}
+            tweenHandler={(ratio) => ({
+                mainOverlay: {
+                    opacity: ratio,
+                    backgroundColor: appColors.mask
+                }
+            })}>
+            <View style={styles.header}>
+            </View>
+            <View style={styles.list}>
+                <BorrowList />
+            </View>
+            <View style={styles.bar}>
+                        <Button transparent style={StyleSheet.flatten(styles.button)} onPress={this.openDrawer}>
+                            <Icon name='menu'
+                                style={StyleSheet.flatten(styles.icon)} />
+                        </Button>
+                    </View>
+                    <View style={styles.title}>
+                        <Text style={styles.titleText}>借款紀錄</Text>
+                    </View>
+            </Drawer>
         );
     }
 
-    handleFabClose() {
-        this.setState({fabActive: !this.state.fabActive});
+    openDrawer() {
+        this.drawer._root.open();
+    }
+
+    closeDrawer() {
+        this.drawer._root.close();
     }
     
 }
-const styles = {
-    fabMask: {
+const styles = StyleSheet.create({
+    header: {
+        height: 60,
+        backgroundColor: 'rgb(18, 108, 168)',
+    },
+    list: {
+        top: 100,
+    },
+    bar: {
         position: 'absolute',
-        top: 0,
+        top: Platform.OS === 'ios'? 15 : 0,
         left: 0,
         right: 0,
-        bottom: 0,
-        backgroundColor: appColors.mask
+        height: (Platform.OS === 'ios') ? 49 : 56,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        backgroundColor: 'transparent'
     },
-    fabContainer: {
-        marginLeft: 10
+    button: {
+        height: (Platform.OS === 'ios') ? 49 : 56
     },
-    fab: {
-        backgroundColor: appColors.primary
+    icon: {
+        color: 'white'
     },
-    mood: {
-        backgroundColor: appColors.primaryLightBorder
+    title: {
+        position: 'absolute',
+        top: Platform.OS === 'ios'? 27 : 14,
+        alignSelf: 'center',
+        backgroundColor: 'transparent'
     },
-    moodIcon: {
-        color: appColors.primaryLightText
-    }
-};
+    titleText: {
+        color: 'white',
+        fontSize: (Platform.OS === 'ios') ? 17 : 19,
+        fontWeight: (Platform.OS ==='ios') ? '600' : undefined
+    },
+});

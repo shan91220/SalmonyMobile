@@ -18,7 +18,7 @@ export default class Login extends React.Component{
     render(){
         const {navigate} = this.props.navigation;
         return (
-            <NavigationContainer title='NewlendForm' navigate={navigate}>
+            <NavigationContainer title='新增借款' navigate={navigate}>
                 <View>    
                     <View style={styles.form}>
                         <Form>
