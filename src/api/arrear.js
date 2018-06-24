@@ -20,7 +20,25 @@ function _listArrearRecords(user_account = '') {
         {   
             record_id : 2,
             name : 'Shan',
-            amount : 10,
+            amount : 200,
+            expect_date : '2018-04-23'
+        },
+        {   
+            record_id : 3,
+            name : 'Shan',
+            amount : 300,
+            expect_date : '2018-04-23'
+        },
+        {   
+            record_id : 4,
+            name : 'Shan',
+            amount : 400,
+            expect_date : '2018-04-23'
+        },
+        {   
+            record_id : 5,
+            name : 'Shan',
+            amount : 500,
             expect_date : '2018-04-23'
         }
     ];

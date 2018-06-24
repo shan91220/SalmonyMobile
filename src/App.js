@@ -75,7 +75,7 @@ const AppWithNavState = connect(state => ({
 }))(AppWithStyleAndNavigator);
 
 // Nav reducer
-const initialState = AppNavigator.router.getStateForAction(NavigationActions.navigate({routeName: 'BorrowForm'}));
+const initialState = AppNavigator.router.getStateForAction(NavigationActions.navigate({routeName: 'HistoryForm'}));
 const nav = (state = initialState, action) => {
     const nextState = AppNavigator.router.getStateForAction(action, state);
     return nextState || state;

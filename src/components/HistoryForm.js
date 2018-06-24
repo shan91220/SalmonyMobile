@@ -32,11 +32,14 @@ export default class HistoryForm extends React.Component{
                     backgroundColor: appColors.mask
                 }
             })}>
-            <View style={styles.header}>
+            <View style={styles.contain}>
+                <View style={styles.header}>
+                </View>
+                <View style={styles.list}>
+                    <HistoryList />
+                </View>
             </View>
-            <View style={styles.list}>
-                <HistoryList />
-            </View>
+            
             <View style={styles.bar}>
                         <Button transparent style={StyleSheet.flatten(styles.button)} onPress={this.openDrawer}>
                             <Icon name='menu'
@@ -60,12 +63,15 @@ export default class HistoryForm extends React.Component{
     
 }
 const styles = StyleSheet.create({
+    contain: {
+        flexDirection: 'column',
+    },
     header: {
         height: 60,
         backgroundColor: 'rgb(18, 108, 168)',
     },
     list: {
-        top: 100,
+        top: 35,
     },
     bar: {
         position: 'absolute',

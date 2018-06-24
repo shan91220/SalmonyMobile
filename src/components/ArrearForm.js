@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgb(18, 108, 168)',
     },
     list: {
-        top: 100,
+        top: 35,
     },
     bar: {
         position: 'absolute',
