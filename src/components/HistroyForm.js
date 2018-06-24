@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import {Text, StyleSheet, View, Image} from 'react-native';
 import { Button,Container, Header, Content, Form, Item, Input, Label, Fab} from 'native-base';
 import NavigationContainer from './NavigationContainer';
-import BorrowList from './BorrowList';
-export default class BorrowForm extends React.Component{
+import HistoryList from './HistoryList';
+export default class HistoryForm extends React.Component{
     static propTypes = {
         navigation: PropTypes.object.isRequired
     };
@@ -19,10 +19,10 @@ export default class BorrowForm extends React.Component{
             <View>
                 <NavigationContainer
                 navigate={navigate} 
-                title='BorrowForm'
+                title='HistoryForm'
                 >
                 </NavigationContainer>
-                <BorrowList/>
+                <HistoryList/>
             </View>
         );
     }

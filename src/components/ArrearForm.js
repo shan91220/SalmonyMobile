@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Text, StyleSheet, View, Image} from 'react-native';
 import { Button,Container, Header, Content, Form, Item, Input, Label } from 'native-base';
 import NavigationContainer from './NavigationContainer';
+import ArrearList from './ArrearList';
 export default class ArrearForm extends React.Component{
     static propTypes = {
         navigation: PropTypes.object.isRequired
@@ -14,11 +15,14 @@ export default class ArrearForm extends React.Component{
     render(){
         const {navigate} = this.props.navigation;
         return (
-            <NavigationContainer navigate={navigate} title='ArrearForm'>
             <View>
-                <Text>ArrearForm</Text>
+                <NavigationContainer
+                navigate={navigate} 
+                title='ArrearForm'
+                >
+                </NavigationContainer>
+                <ArrearList/>
             </View>
-            </NavigationContainer>
         );
     }
     
